@@ -1,17 +1,42 @@
 #include <stdio.h>
-int main() {
-   int i, space, rows, k = 0;
-   printf("Enter the number of rows: ");
-   scanf("%d", &rows);
-   for (i = 1; i <= rows; ++i, k = 0) {
-      for (space = 1; space <= rows - i; ++space) {
-         printf("  ");
-      }
-      while (k != 2 * i - 1) {
-         printf("# ");
-         ++k;
-      }
-      printf("\n");
-   }
-   return 0;
+
+int getValue();
+void draw(int height);
+
+int main(void)
+{
+    int height = getValue();
+    draw(height);
+}
+
+int getValue()
+{
+    int a;
+    do
+    {
+        printf("get height");
+        scanf("%d", &a);
+    }
+    while (a < 1 || a > 8);
+   
+    return a;
+}
+
+void draw(int height)
+{
+
+    for (int i = 0; i < height; i++)
+    {
+
+        for (int spaces = i + 1; spaces < height; spaces++)
+        {
+            printf(" ");
+        }
+        
+        for (int hashes = height + i + 1; hashes > height; hashes--)
+        {
+            printf("#");
+        }
+        printf("\n");
+    }
 }
