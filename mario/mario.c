@@ -9,12 +9,13 @@ int main(void)
     draw(height);
 }
 
+//method to get the value input value
 int getValue()
 {
     int a;
     do
     {
-        printf("get height");
+        printf("get height\n");
         scanf("%d", &a);
     }
     while (a < 1 || a > 8);
@@ -22,18 +23,26 @@ int getValue()
     return a;
 }
 
+//method to draw the pyramid
 void draw(int height)
 {
 
     for (int i = 0; i < height; i++)
     {
-
+        //creates indentations to form pyramid
         for (int spaces = i + 1; spaces < height; spaces++)
         {
             printf(" ");
         }
-        
-        for (int hashes = height + i + 1; hashes > height; hashes--)
+        //draws the actual pyramid
+        for (int j = height + i + 1; j > height; j--)
+        {
+            printf("#");
+        }
+    printf("  ");
+    
+    //creates the other side of pyramid
+            for (int j = height + i + 1; j > height; j--)
         {
             printf("#");
         }
