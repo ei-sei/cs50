@@ -1,26 +1,17 @@
 #include <stdio.h>
-
-int main(void)
-{ 
-    int height, i, j;
-    do
-    {
-        printf("please give me a height between 1-8: ");
-        //height = GetInt();
-        scanf("%d", &height);
-    }    
-    while (height < 1 || height > 8);
-
-    printf("Height is = %d\n", height);    
-    for (i = 0; i < height; i++) {
-
-        for (j = 0; j < height - i - 1; j++)
-            printf(" ");
-        for (j = 0; j < i + 2; j++)
-            printf("#");
-
-        printf("\n");
-    }
+int main() {
+   int i, space, rows, k = 0;
+   printf("Enter the number of rows: ");
+   scanf("%d", &rows);
+   for (i = 1; i <= rows; ++i, k = 0) {
+      for (space = 1; space <= rows - i; ++space) {
+         printf("  ");
+      }
+      while (k != 2 * i - 1) {
+         printf("# ");
+         ++k;
+      }
+      printf("\n");
+   }
+   return 0;
 }
-
-//https://www.programiz.com/c-programming/examples/pyramid-pattern
