@@ -41,7 +41,7 @@ void draw(int height)
         }
     printf("  ");
     
-    //creates the other side of pyramid
+    //creates the other side of pyramid.
             for (int j = height + i + 1; j > height; j--)
         {
             printf("#");
